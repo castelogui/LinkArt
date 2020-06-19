@@ -9,8 +9,8 @@ Tenha um banco PostgreSQL configurado em sua máquina ou na nuvem
 Mude as configurações do database em ```backend/knexfile.js``` para as informações do seu banco local
 
 ```bash
-# Instale as dependencias em Linkart/backend
-$ npm i 
+# Instale as dependencias dentro de /Linkart/backend
+$ npm install 
 # Rode as migrates
 $ npm run migrate
 # Rode os seeds
