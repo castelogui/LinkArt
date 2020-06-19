@@ -39,7 +39,7 @@ module.exports = {
       email,
       password,
       occupation,
-      state,
+      uf,
       city
     } = request.body;
 
