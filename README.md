@@ -6,7 +6,7 @@ Uma aplicação que reuna todos os tipos de artistas em um único local. Nela os
 
 Tenha um banco PostgreSQL configurado em sua máquina ou na nuvem
 
-Mude as configurações do database em **`backend/knexfile.js`** para as informações do seu banco local
+Mude as configurações do database em ```backend/knexfile.js``` para as informações do seu banco local
 
 ```bash
 # Instale as dependencias em Linkart/backend
