@@ -1,4 +1,5 @@
 const knex = require('../database');
+const { all } = require('../routes');
 
 module.exports = {
   async index(request, response){
@@ -21,6 +22,14 @@ module.exports = {
     }
 
     return response.json(user);
+  },
+  async all(request, response){
+    const user = await knex('users')
+      .select('id','username');
+    
+    const message = "Busque dados de apenas um user com a rota '/profile/:username'";
+    
+    return response.json({users: user, message: message});
   },
   
   async create(request, response){
