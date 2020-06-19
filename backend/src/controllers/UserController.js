@@ -11,7 +11,7 @@ module.exports = {
         'name', 
         'username', 
         'occupation',
-        'state',
+        'uf',
         'city'
       );
     
