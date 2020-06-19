@@ -14,12 +14,13 @@ module.exports = {
         'city'
       );
     
-    if (!user) {
+    if (user.length === 0) {
+      const error = `User '${username}' does not exist`
       return response.status(400)
-      .json({ error: 'No USER found with this username' });
+      .json({ message: {error} });
     }
 
-    return response.json(user)
+    return response.json(user);
   },
   
   async create(request, response){
