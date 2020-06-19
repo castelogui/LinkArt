@@ -4,7 +4,7 @@ const UserController = require('./controllers/UserController');
 
 const routes = express.Router();
 
-routes.get('/', UserController.all);
+routes.get('/users', UserController.all);
 routes.get('/profile/:username', UserController.index);
 routes.post('/register', UserController.create);
 
