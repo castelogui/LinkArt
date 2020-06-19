@@ -11,7 +11,7 @@ exports.seed = function(knex) {
           email: 'guilherme@gmail.com',
           password: '12345',
           occupation: 'Baterista',
-          state: 'RO',
+          uf: 'RO',
           city: 'Ariquemes'  
         },
         {
@@ -20,7 +20,7 @@ exports.seed = function(knex) {
           email: 'rafael@gmail.com',
           password: '12345',
           occupation: 'Baixista',
-          state: 'SP',
+          uf: 'SP',
           city: 'São Paulo'  
         },
         {
@@ -29,7 +29,7 @@ exports.seed = function(knex) {
           email: 'pedro@gmail.com',
           password: '12345',
           occupation: 'Desenhista',
-          state: 'RO',
+          uf: 'RO',
           city: 'Porto Velho'  
         },
       ]);

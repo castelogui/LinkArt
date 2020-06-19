@@ -5,7 +5,7 @@ exports.up = knex => knex.schema.createTable('users', table => {
   table.string('email').notNullable();
   table.string('password').notNullable();
   table.string('occupation').notNullable();
-  table.string('state').notNullable();
+  table.string('uf').notNullable();
   table.string('city').notNullable();
 });
 
