@@ -13,7 +13,22 @@ exports.seed = function(knex) {
         {
           text: 'Teste de texto para o post',
           archive: '"link do arquivo (foto, video, audio)"',
+          user_id: 1
+        },
+        {
+          text: 'Teste de texto para o post',
+          archive: '"link do arquivo (foto, video, audio)"',
           user_id: 2
+        },
+        {
+          text: 'Teste de texto para o post',
+          archive: '"link do arquivo (foto, video, audio)"',
+          user_id: 2
+        },
+        {
+          text: 'Teste de texto para o post',
+          archive: '"link do arquivo (foto, video, audio)"',
+          user_id: 3
         },
         {
           text: 'Teste de texto para o post',
