@@ -6,7 +6,7 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex('users').insert([
         {
-          name: 'Guilherme',
+          name: 'Guilherme Castelo',
           username: 'castelogui',
           email: 'guilherme@gmail.com',
           password: '12345',
@@ -15,7 +15,7 @@ exports.seed = function(knex) {
           city: 'Ariquemes'  
         },
         {
-          name: 'Rafael',
+          name: 'Rafael de Melo',
           username: 'rafalopesdemelo',
           email: 'rafael@gmail.com',
           password: '12345',
@@ -24,7 +24,7 @@ exports.seed = function(knex) {
           city: 'São Paulo'  
         },
         {
-          name: 'Pedro',
+          name: 'Pedro Souza',
           username: 'pedro',
           email: 'pedro@gmail.com',
           password: '12345',
