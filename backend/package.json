@@ -13,6 +13,7 @@
   },
   "scripts": {
     "migrate": "knex migrate:latest",
+    "down": "knex migrate:down",
     "seed": "knex seed:run",
     "start": "nodemon src/server.js"
   },
