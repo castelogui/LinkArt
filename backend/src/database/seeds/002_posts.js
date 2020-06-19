@@ -6,14 +6,19 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex('posts').insert([
         {
-          username: 'castelogui',
           text: 'Teste de texto para o post',
-          archive: '"link do arquivo (foto, video, audio)"'
+          archive: '"link do arquivo (foto, video, audio)"',
+          user_id: 1
         },
         {
-          username: 'rafalodedemelo',
           text: 'Teste de texto para o post',
-          archive: '"link do arquivo (foto, video, audio)"'
+          archive: '"link do arquivo (foto, video, audio)"',
+          user_id: 2
+        },
+        {
+          text: 'Teste de texto para o post',
+          archive: '"link do arquivo (foto, video, audio)"',
+          user_id: 3
         }
       ]);
     });
