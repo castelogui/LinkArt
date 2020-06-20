@@ -68,6 +68,12 @@ module.exports = {
       city
     } = request.body;
 
-    await knex('users').where('user_id', id)
+    try{
+      await knex('users').where('id', user_id).update(user_update);
+
+      return response.json(user_update);
+    }catch(e){
+      return response.json(e);
+    }
   }
 }
