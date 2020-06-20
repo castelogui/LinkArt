@@ -54,24 +54,20 @@ module.exports = {
       return response.json({ message: {err, e} });
     }
   },
+  
+  async update(request, response){
+    const user_id = request.headers.authorization;
 
-  async logon(request, response){
-    // Requesita os dados para login
-    const { username, password } = request.body;
+    const user_update = {
+      name,
+      username,
+      email,
+      password,
+      occupation,
+      uf,
+      city
+    } = request.body;
 
-    // Aguarda a conexão buscando o dados enviados do body
-    const user = await knex('users')
-      .where('username', username)
-      .andWhere('password', password)
-      .select('id','name','username','email') // seleciona dados do user em questão
-      .first();
-    
-    // Se não existir um user com aqueles dados
-    if(!user){
-      return response.status(400).json({ error: 'Username or password invalided!'})
-    }
-
-    const message = `Sucessefull login from ${username}`;
-    return response.json({ message: message, user});
+    await knex('users').where('user_id', id)
   }
 }
