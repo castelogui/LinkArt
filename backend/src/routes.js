@@ -8,6 +8,7 @@ const routes = express.Router();
 
 routes.get('/users', UserController.all);
 routes.get('/profile/:username', UserController.index);
+routes.put('/profile/:username', UserController.update);
 routes.post('/register', UserController.create);
 routes.post('/logon', SessionController.index);
 
