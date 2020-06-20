@@ -7,6 +7,7 @@ module.exports = {
     const user = await knex('users')
       .where('username', username)
       .select(
+        'id',
         'name', 
         'username', 
         'occupation',
