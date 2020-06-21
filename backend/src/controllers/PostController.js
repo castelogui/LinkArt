@@ -1,4 +1,5 @@
 const knex = require("../database");
+const { where } = require("../database");
 
 module.exports = {
   async index(request, response){
@@ -21,5 +22,26 @@ module.exports = {
       return response.json({ error: `User ${username} no have this post ${id}` })
     }
     return response.json(post);
+  },
+
+  async create(request, response){
+    const { username } = request.params;
+    const id = request.headers.authorization;
+
+    const { text, archive } = request.body;
+
+    const [ user ] = await knex('users')
+      .where('id', id)
+      .select('username', 'id');
+
+    if(user.username !== username){
+      return response.json({error: 'Error, you are not authorized'});
+    }
+
+    await knex('posts')
+      .where('user_id', id)
+      .insert({text, archive, user_id: id});
+    
+    return response.json({ message: 'Post created successfully' });
   }
 }
