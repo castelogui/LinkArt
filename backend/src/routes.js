@@ -13,5 +13,6 @@ routes.post('/register', UserController.create);
 routes.post('/logon', SessionController.index);
 
 routes.get('/feed', PostController.index);
+routes.get('/feed/:username/:id', PostController.detail);
 
 module.exports = routes;
