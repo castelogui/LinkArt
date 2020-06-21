@@ -56,25 +56,28 @@ module.exports = {
     }
   },
   
-  async update(request, response){
-    const user_id = request.headers.authorization;
-
-    const user_update = {
-      name,
-      username,
-      email,
-      password,
-      occupation,
-      uf,
-      city
-    } = request.body;
+  async update(request, response){ // Controle de updates para dados mais comuns, não sensíveis
+    const id = request.headers.authorization; // Requesita o id de autorização no header
+    
+    const { username } = request.params; // Busca o username do param
+    
+    const user = await knex('users').where('id', id)
+      .select('username').first(); // Busca o username de acordo com o id requesitado do header
+   
+    if(user.username !== username){ // Confere o username de acordo o id é o mesmo do param
+      return response.json({ error: 'Not permitted!'}); // Caso não for, retorna que não é permitido
+    }
+    
+    // Recebe do body como objeto os dados a serem atualizados 
+    // **Por enquanto não da pra alterar o USERNAME**
+    // Pretendo criar outra rota para tratar de dados mais sensíveis
+    const user_update = { name, email, password, occupation, uf, city } = request.body;
 
     try{
-      await knex('users').where('id', user_id).update(user_update);
-
-      return response.json(user_update);
-    }catch(e){
-      return response.json(e);
+      await knex('users').where('id', id).update(user_update);// Aguarda conexão para atualizar os dados
+      return response.json({ update: user_update }); // Retorna os dados que foram atualizados
+    }catch(err){
+      return response.json(err); // Retorna o erro caso aconteça
     }
   }
 }
