@@ -1,5 +1,4 @@
 const knex = require("../database");
-const { where } = require("../database");
 
 module.exports = {
   async index(request, response){
@@ -43,5 +42,31 @@ module.exports = {
       .insert({text, archive, user_id: id});
     
     return response.json({ message: 'Post created successfully' });
+  },
+
+  async update(request, response){
+    const { username, id } = request.params; // Busca username do user e o id do post
+
+    const [ user ] = await knex('users')
+      .join('posts', 'users.id', '=', 'posts.user_id')
+      .where('posts.id', id)
+      .select('username'); // Seleciona o username para autenticação
+
+    if(user.username !== username){
+      return response.json({error: 'Error, you are not authorized'}); // Retorna um erro de autorização
+    }
+
+    const { text } = request.body; // Por enquanto só será possível alterar o texto do post
+    const updated_post =  knex.fn.now(); // Atualiza a data de update
+
+    const post_update = await knex('posts')
+      .where('id', id)
+      .update({ text, updated_post }); // Faz o update no banco
+    
+    const post = await knex('posts')
+      .where('id', post_update)
+      .select('*'); // Seleciona o post para visualização dos dados
+
+    return response.json(post);
   }
 }
