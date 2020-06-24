@@ -68,5 +68,23 @@ module.exports = {
       .select('*'); // Seleciona o post para visualização dos dados
 
     return response.json(post);
+  },
+
+  async delete(request, response){
+    const { username, id } = request.params; // Busca username do user e o id do post
+
+    const [ user ] = await knex('users')
+      .join('posts', 'users.id', '=', 'posts.user_id')
+      .where('posts.id', id)
+      .select('username'); // Seleciona o username para autenticação
+
+    if(user.username !== username){
+      return response.json({error: 'Error, you are not authorized'}); // Retorna um erro de autorização
+    }
+
+    await knex('posts').where('id', id).delete();
+
+    return response.json({ message: 'Post deleted!' })
+
   }
 }
