@@ -4,8 +4,6 @@ Uma aplicação que reuna todos os tipos de artistas em um único local. Nela os
 
 ### Rodando o Backend
 
-Tenha um banco PostgreSQL configurado em sua máquina ou na nuvem
-
 Mude as configurações do database em ```backend/knexfile.js``` para as informações do seu banco local
 
 ```bash
