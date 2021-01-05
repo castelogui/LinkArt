@@ -19,5 +19,5 @@ $ npm start
 
 Abra no *navegador* ou *insominia*
 ```bash
-http://localhost:3333/users
+http://localhost:3333
 ```
