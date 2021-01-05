@@ -1,36 +1,36 @@
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('users').del()
+  return knex('user').del()
     .then(function () {
       // Inserts seed entries
-      return knex('users').insert([
+      return knex('user').insert([
         {
-          name: 'Guilherme Castelo',
-          username: 'castelogui',
-          email: 'guilherme@gmail.com',
-          password: '12345',
-          occupation: 'Baterista',
-          uf: 'RO',
-          city: 'Ariquemes'  
+          name_user: 'Guilherme Castelo',
+          username_user: 'castelogui',
+          email_user: 'guilherme@gmail.com',
+          password_user: '12345',
+          occupation_user: 'Baterista',
+          uf_user: 'RO',
+          city_user: 'Ariquemes'  
         },
         {
-          name: 'Rafael de Melo',
-          username: 'rafalopesdemelo',
-          email: 'rafael@gmail.com',
-          password: '12345',
-          occupation: 'Baixista',
-          uf: 'SP',
-          city: 'São Paulo'  
+          name_user: 'Rafael de Melo',
+          username_user: 'rafalopesdemelo',
+          email_user: 'rafael@gmail.com',
+          password_user: '12345',
+          occupation_user: 'Baixista',
+          uf_user: 'SP',
+          city_user: 'São Paulo'  
         },
         {
-          name: 'Pedro Souza',
-          username: 'pedro',
-          email: 'pedro@gmail.com',
-          password: '12345',
-          occupation: 'Desenhista',
-          uf: 'RO',
-          city: 'Porto Velho'  
+          name_user: 'Pedro Souza',
+          username_user: 'pedro',
+          email_user: 'pedro@gmail.com',
+          password_user: '12345',
+          occupation_user: 'Desenhista',
+          uf_user: 'RO',
+          city_user: 'Porto Velho'  
         },
       ]);
     });

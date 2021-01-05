@@ -1,39 +1,57 @@
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('posts').del()
+  return knex('post').del()
     .then(function () {
       // Inserts seed entries
-      return knex('posts').insert([
+      return knex('post').insert([
         {
-          text: 'Teste de texto para o post',
-          archive: '"link do arquivo (foto, video, audio)"',
-          user_id: 1
+          id_post: null,
+          created_post: null,
+          updated_post: null,
+          text_post: 'Teste de texto para o post',
+          archive_post: '"link do arquivo (foto, video, audio)"',
+          id_user_fk: 1
         },
         {
-          text: 'Teste de texto para o post',
-          archive: '"link do arquivo (foto, video, audio)"',
-          user_id: 1
+          id_post: null,
+          created_post: null,
+          updated_post: null,
+          text_post: 'Teste de texto para o post',
+          archive_post: '"link do arquivo (foto, video, audio)"',
+          id_user_fk: 1
         },
         {
-          text: 'Teste de texto para o post',
-          archive: '"link do arquivo (foto, video, audio)"',
-          user_id: 2
+          id_post: null,
+          created_post: null,
+          updated_post: null,
+          text_post: 'Teste de texto para o post',
+          archive_post: '"link do arquivo (foto, video, audio)"',
+          id_user_fk: 2
         },
         {
-          text: 'Teste de texto para o post',
-          archive: '"link do arquivo (foto, video, audio)"',
-          user_id: 2
+          id_post: null,
+          created_post: null,
+          updated_post: null,
+          text_post: 'Teste de texto para o post',
+          archive_post: '"link do arquivo (foto, video, audio)"',
+          id_user_fk: 2
         },
         {
-          text: 'Teste de texto para o post',
-          archive: '"link do arquivo (foto, video, audio)"',
-          user_id: 3
+          id_post: null,
+          created_post: null,
+          updated_post: null,
+          text_post: 'Teste de texto para o post',
+          archive_post: '"link do arquivo (foto, video, audio)"',
+          id_user_fk: 3
         },
         {
-          text: 'Teste de texto para o post',
-          archive: '"link do arquivo (foto, video, audio)"',
-          user_id: 3
+          id_post: null,
+          created_post: null,
+          updated_post: null,
+          text_post: 'Teste de texto para o post',
+          archive_post: '"link do arquivo (foto, video, audio)"',
+          id_user_fk: 3
         }
       ]);
     });
