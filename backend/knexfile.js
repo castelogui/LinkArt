@@ -3,10 +3,10 @@ module.exports = {
     client: 'mysql',
     connection: {
       // Informações do banco de dados local
-      host: 'localhost:3306',
-      database: 'linkart',
-      user:     'root',
-      password: 'admin'
+      host: 'endereço do host do banco',
+      database: 'banco',
+      user:     'usuário',
+      password: 'senha do usuário'
     },
     migrations: {
       directory: `${__dirname}/src/database/migrations`
