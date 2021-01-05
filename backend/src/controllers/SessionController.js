@@ -6,10 +6,10 @@ module.exports = {
     const { username, password } = request.body;
 
     // Aguarda a conexão buscando o dados enviados do body
-    const user = await knex('users')
-      .where('username', username)
-      .andWhere('password', password)
-      .select('id','name','username','email') // seleciona dados do user em questão
+    const user = await knex('user')
+      .where('username_user', username)
+      .andWhere('password_user', password)
+      .select('id_user','name_user','username_user','email_user') // seleciona dados do user em questão
       .first();
     
     // Se não existir um user com aqueles dados
